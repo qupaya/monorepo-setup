@@ -1,0 +1,9 @@
+{
+  "name": "setup-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/setup-e2e/src",
+  "implicitDependencies": ["setup"],
+  "// targets": "to see all targets run: nx show project setup-e2e --web",
+  "targets": {}
+}
