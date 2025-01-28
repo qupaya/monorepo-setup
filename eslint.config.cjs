@@ -126,11 +126,21 @@ module.exports = [
   },
   ...compat
     .config({
-      extends: ['plugin:@nx/typescript', 'plugin:rxjs/recommended'],
+      extends: [
+        'plugin:@nx/typescript',
+        'plugin:rxjs/recommended',
+        'plugin:@typescript-eslint/recommended-type-checked',
+      ],
     })
     .map((config) => ({
       ...config,
       files: ['**/*.ts', '**/*.tsx', '**/*.cts', '**/*.mts'],
+      languageOptions: {
+        parserOptions: {
+          projectService: true,
+          tsconfigRootDir: __dirname,
+        },
+      },
       plugins: {
         rxjs: eslintPluginRxjs,
         'rxjs-angular': eslintPluginRxjsAngular,
